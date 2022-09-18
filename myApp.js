@@ -10,14 +10,17 @@ let app = express();
 // });
 
 // -- #3. Serve an HTML File -- //
-// app.get("/", (res, res) => {
+// app.get("/", (req, res) => {
 //   res.sendFile(__dirname + "/views/index.html");
 // });
 
 // -- #4. Serve Static Assets -- //
-app.use("/public", express.static(__dirname + "/public"));
+// app.use("/public", express.static(__dirname + "/public"));
 
-
+// -- #5. Serve JSON on a Specific Route -- //
+app.get("/json", (req, res) => {
+  res.json({"message": "Hello json"});
+});
 
 
 

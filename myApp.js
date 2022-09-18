@@ -10,11 +10,12 @@ let app = express();
 // });
 
 // -- #3. Serve an HTML File -- //
-app.get("/", (res, res) => {
-  res.sendFile(__dirname + "/views/index.html");
-});
+// app.get("/", (res, res) => {
+//   res.sendFile(__dirname + "/views/index.html");
+// });
 
-
+// -- #4. Serve Static Assets -- //
+app.use("/public", express.static(__dirname + "/public"));
 
 
 

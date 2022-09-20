@@ -20,6 +20,11 @@ app.get("/", (req, res) => {
 // -- #4. Serve Static Assets -- //
 app.use("/public", express.static(__dirname + "/public"));
 
+// -- #5. Serve JSON on a Specific Route -- //
+app.get("/json", (req, res) => {
+  res.json({ "message": "Hello json" });
+});
+
 
 
 

@@ -21,8 +21,13 @@ app.get("/", (req, res) => {
 app.use("/public", express.static(__dirname + "/public"));
 
 // -- #5. Serve JSON on a Specific Route -- //
+// app.get("/json", (req, res) => {
+//   res.json({ "message": "Hello json" });
+// });
+
+// -- #6. Use the .env File -- //
 app.get("/json", (req, res) => {
-  res.json({ "message": "Hello json" });
+  res.json({ "message": process.env.MESSAGE_STYLE == "uppercase" ? "HELLO JSON" : "Hello json" });
 });
 
 

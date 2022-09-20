@@ -2,7 +2,14 @@
 
 let express = require('express');
 let app = express();
+require("dotenv").config(); // #6. Use the .env File
 
+
+// -- #7. Implement a Root-Level Request Logger Middleware -- //
+app.use((req, res, next) => {
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next();
+});
 
 // -- #1. Meet the Node console -- //
 console.log("Hello World");

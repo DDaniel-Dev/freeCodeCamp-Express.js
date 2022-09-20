@@ -2,8 +2,12 @@
 
 let express = require('express');
 let app = express();
-require("dotenv").config(); // #6. Use the .env File
+require('dotenv').config(); // #6. Use the .env File
+let bodyParser = require('body-parser');
 
+
+// -- #11. Use body-parser to Parse POST Resquests -- //
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // -- #7. Implement a Root-Level Request Logger Middleware -- //
 app.use((req, res, next) => {

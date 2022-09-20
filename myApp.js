@@ -8,8 +8,13 @@ let app = express();
 console.log("Hello World");
 
 // -- #2. Start a Working Express Server -- //
+// app.get("/", (req, res) => {
+//   res.send("Hello Express");
+// });
+
+// -- #3. Serve an HTML File -- //
 app.get("/", (req, res) => {
-  res.send("Hello Express");
+  res.sendFile(__dirname + "views/index.html");
 });
 
 
